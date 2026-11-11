@@ -1,0 +1,73 @@
+<section class="section" id="skill">
+  <p class="kicker" data-i18n="sk.kicker">Skill</p>
+  <h2 class="section-title" data-i18n="sk.title">Revisar con la página de ejemplos</h2>
+  <p class="lede" data-i18n="sk.lede">revise-prompt no tiene otra lista. Mira el borrador contra las piezas de la guía y, si pides corrección, lo deja con la forma de los prompts de Ejemplos.</p>
+
+  <h3 class="step-name sub" data-i18n="sk.case">Sobre el prompt débil de arquitectura</h3>
+  <div class="pair">
+    <article class="card">
+      <p class="pair-label" data-i18n="sk.case.in">Lo que pegas</p>
+      <div class="code">
+        <pre><code data-i18n="sk.case.prompt">Corrige este prompt:
+Hazme la arquitectura de mi app, el código, los tests y el plan de marketing. Que quede bien.</code></pre>
+      </div>
+    </article>
+    <article class="card">
+      <p class="pair-label" data-i18n="sk.case.out">Lo que devuelve</p>
+      <div class="code">
+        <pre><code data-i18n="sk.case.reply">## Veredicto
+No se sostiene: cuatro trabajos y ninguna métrica.
+
+## Huecos
+- Fase 1 — Tarea: arquitectura, código, tests y marketing en una frase.
+- Fase 1 — Restricciones: «Que quede bien» no se puede medir.
+- Método — Modularización: el código y el marketing van en prompts aparte.
+
+## Prompt
+La versión efectiva de arquitectura, en la página de ejemplos.</code></pre>
+      </div>
+    </article>
+  </div>
+
+  <div class="cards">
+    <article class="card">
+      <p class="step-index">01</p>
+      <h3 data-i18n="sk.review.title">Revisar</h3>
+      <p data-i18n="sk.review.body">Si solo preguntas qué falla, se queda en el veredicto y los huecos. No reescribe.</p>
+    </article>
+    <article class="card">
+      <p class="step-index">02</p>
+      <h3 data-i18n="sk.fix.title">Corregir</h3>
+      <p data-i18n="sk.fix.body">Si pides mejorarlo, el prompt nuevo sigue el ejemplo efectivo: rol, contexto delimitado, una tarea, restricciones, formato y la orden crítica al final.</p>
+    </article>
+    <article class="card">
+      <p class="step-index">03</p>
+      <h3 data-i18n="sk.split.title">Partir</h3>
+      <p data-i18n="sk.split.body">Si el borrador hace más de un trabajo, lo corta como el pipeline de la fase 06: uno clasifica, otro extrae, un tercero redacta.</p>
+    </article>
+  </div>
+
+  <h3 class="step-name sub" data-i18n="sk.ask">Cómo pedirla</h3>
+  <div class="code">
+    <p class="code-label" data-i18n="sk.ask.label">Frases que la disparan</p>
+    <pre><code data-i18n="sk.ask.code">Revisa este prompt.
+Mejora este prompt.
+Corrige este prompt.
+Sugiere un prompt para diseñar solo la arquitectura de red.</code></pre>
+  </div>
+
+  <div class="facts">
+    <article class="fact">
+      <h3 data-i18n="sk.list.title">Qué compara</h3>
+      <p data-i18n="sk.list.body">Anatomía, técnica, patrón, software, modelo y método, en ese orden. Few-shot solo si el tono debe ser el del ejemplo. Chain-of-thought al final solo en lógica o depuración.</p>
+    </article>
+    <article class="fact">
+      <h3 data-i18n="sk.where.title">Dónde vive</h3>
+      <p data-i18n="sk.where.body">.cursor/skills/revise-prompt/ en este repositorio. El criterio va con la guía.</p>
+    </article>
+    <article class="fact">
+      <h3 data-i18n="sk.lang.title">Idioma</h3>
+      <p data-i18n="sk.lang.body">La respuesta sale en el idioma del borrador. Los nombres de las piezas son los de esta página.</p>
+    </article>
+  </div>
+</section>

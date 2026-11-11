@@ -1,0 +1,32 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+import LangMenu from "./LangMenu.astro";
+---
+
+<aside class="sidebar">
+  <a class="brand" href="/">
+    <span class="brand-mark" aria-hidden="true">*</span>
+    prompt atelier
+  </a>
+  <div class="controls">
+    <ThemeToggle />
+    <LangMenu />
+  </div>
+  <nav class="toc" data-toc aria-label="Contenido">
+    <p class="toc-label" data-i18n="toc.label">En esta guía</p>
+    <ol>
+      <li><a href="/#inicio" data-i18n="toc.home">Inicio</a></li>
+      <li><a href="/#fase-1"><span>01</span> <span data-i18n="toc.1">Anatomía</span></a></li>
+      <li><a href="/#fase-2"><span>02</span> <span data-i18n="toc.2">Técnicas</span></a></li>
+      <li><a href="/#fase-3"><span>03</span> <span data-i18n="toc.3">Patrones</span></a></li>
+      <li><a href="/#fase-4"><span>04</span> <span data-i18n="toc.4">Software</span></a></li>
+      <li><a href="/#fase-5"><span>05</span> <span data-i18n="toc.5">Agentes</span></a></li>
+      <li><a href="/#metodo"><span>06</span> <span data-i18n="toc.6">Método</span></a></li>
+    </ol>
+    <p class="toc-label" data-i18n="toc.apply">Aplicar</p>
+    <ol>
+      <li><a href="/ejemplos" data-i18n="toc.7">Ejemplos</a></li>
+      <li><a href="/skill" data-i18n="toc.8">Skill</a></li>
+    </ol>
+  </nav>
+</aside>

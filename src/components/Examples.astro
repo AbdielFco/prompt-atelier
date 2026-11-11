@@ -1,0 +1,302 @@
+<section class="section" id="ejemplos">
+  <p class="kicker" data-i18n="ex.kicker">Ejemplos</p>
+  <h2 class="section-title" data-i18n="ex.title">Un prompt por cada pieza de la guía</h2>
+  <p class="lede" data-i18n="ex.lede">Cada bloque de abajo es el dicho de una fase, escrito como prompt. Los dos últimos juntan el roadmap: el mismo encargo, débil y efectivo.</p>
+
+  <h3 class="step-name sub" data-i18n="ex.f1">Fase 01 · Anatomía</h3>
+  <div class="code">
+    <p class="code-label" data-i18n="ex.f1.label">Rol, contexto, una tarea, restricciones, formato</p>
+    <pre><code data-i18n="ex.f1.code">Rol: Actúa como un arquitecto de software senior experto en AWS.
+Contexto: Estamos migrando un monolito a microservicios.
+Tarea: Diseña la arquitectura de red.
+Restricciones: No uses bases de datos relacionales. Limita la respuesta a 500 palabras.
+Formato: Devuelve una tabla Markdown y el código en bloques comentados.</code></pre>
+  </div>
+
+  <h3 class="step-name sub" data-i18n="ex.f2">Fase 02 · Técnicas</h3>
+  <div class="cards">
+    <article class="card">
+      <p class="step-index">Few-shot</p>
+      <p data-i18n="ex.f2.few">Dos a cinco pares de entrada y salida. El tono queda en los ejemplos, no en una descripción.</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f2.few.code">Clasifica el ticket. Responde solo con una palabra: bug, duda o pedido.
+
+Entrada: La pantalla de pago se queda en blanco.
+Salida: bug
+
+Entrada: ¿Puedo pagar con transferencia?
+Salida: duda
+
+Entrada: Quiero dos unidades del mismo pedido.
+Salida: pedido</code></pre>
+      </div>
+    </article>
+    <article class="card">
+      <p class="step-index">Chain-of-Thought</p>
+      <p data-i18n="ex.f2.cot">La frase de razonamiento va al final. Sirve para lógica, no para una tarea común.</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f2.cot.code">Tres servicios comparten una base y el pico es 2.000 req/s.
+¿Cuál se parte primero?
+Desglosa tu razonamiento antes de emitir el veredicto final.
+Let's think step by step.</code></pre>
+      </div>
+    </article>
+    <article class="card card-wide">
+      <p class="step-index" data-i18n="ex.f2.del.label">Delimitadores</p>
+      <p data-i18n="ex.f2.del">La orden crítica queda al final. El texto fuente no se mezcla con la instrucción. Si inventa datos, se le corta el margen.</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f2.del.code">### Instrucciones
+Responde solo basado en el texto provisto. Máximo 120 palabras.
+
+"""
+Pico: 2.000 req/s. Equipo de 6. Sin bases de datos relacionales.
+"""
+
+Let's think step by step.</code></pre>
+      </div>
+    </article>
+  </div>
+
+  <h3 class="step-name sub" data-i18n="ex.f3">Fase 03 · Patrones</h3>
+  <div class="cards">
+    <article class="card">
+      <p class="step-index">Flipped interaction</p>
+      <p data-i18n="ex.f3.flip">Una pregunta cada vez, y espera. No un cuestionario entero.</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f3.flip.code">Hazme preguntas de una en una sobre mi negocio hasta que puedas redactar un plan de marketing.
+Espera mi respuesta antes de la siguiente pregunta.</code></pre>
+      </div>
+    </article>
+    <article class="card">
+      <p class="step-index">Meta-prompting</p>
+      <p data-i18n="ex.f3.meta">El primer modelo escribe el prompt. No ejecuta el trabajo.</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f3.meta.code">Escribe un prompt para otro modelo.
+Debe pedir solo la arquitectura de red, con rol, contexto, una tarea, un tope de 500 palabras y una tabla Markdown.
+No diseñes la arquitectura. Entrega el prompt.</code></pre>
+      </div>
+    </article>
+    <article class="card card-wide">
+      <p class="step-index">Self-consistency · Tree of Thoughts</p>
+      <p data-i18n="ex.f3.tree">Varias rutas, una se descarta, queda la que cierra. Es para planear, no para clasificar un ticket.</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f3.tree.code">Genera tres rutas para partir el monolito de pedidos.
+Estima cuál tiene salida.
+Descarta la que no cierra y quédate con la más sólida.</code></pre>
+      </div>
+    </article>
+  </div>
+
+  <h3 class="step-name sub" data-i18n="ex.f4">Fase 04 · Software</h3>
+  <div class="cards">
+    <article class="card">
+      <p class="step-index" data-i18n="ex.f4.gen.label">Desde cero</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f4.gen.code">Escribe un componente React funcional
+usando TypeScript y Tailwind CSS.
+Usa hooks. No incluyas explicaciones,
+solo el código.</code></pre>
+      </div>
+    </article>
+    <article class="card">
+      <p class="step-index">Debugging</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f4.debug.code">Analiza el siguiente stack trace paso a
+paso, identifica la línea problemática,
+explica por qué falla y luego provee
+el código corregido.</code></pre>
+      </div>
+    </article>
+    <article class="card">
+      <p class="step-index" data-i18n="ex.f4.ref.label">Refactor</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f4.ref.code">Métrica: reducir la complejidad ciclomática.
+Reescribe la función sin cambiar el comportamiento.
+No uses «mejóralo» como criterio.</code></pre>
+      </div>
+    </article>
+    <article class="card">
+      <p class="step-index" data-i18n="ex.f4.test.label">Pruebas</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f4.test.code">Escribe tests en Jest.
+Cubre el happy path y este edge case:
+si items es undefined, el total es 0.</code></pre>
+      </div>
+    </article>
+  </div>
+
+  <h3 class="step-name sub" data-i18n="ex.f5">Fase 05 · Modelos</h3>
+  <div class="cards">
+    <article class="card">
+      <p class="step-index">GPT-4o</p>
+      <p data-i18n="ex.f5.gpt">Markdown, un rol definido y un solo bloque.</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f5.gpt.code"># Rol
+Arquitecto de software senior, AWS.
+
+# Contexto
+Monolito de pedidos hacia microservicios.
+
+# Tarea
+Diseña solo la arquitectura de red.
+
+# Salida
+Una tabla Markdown. Máximo 500 palabras.</code></pre>
+      </div>
+    </article>
+    <article class="card">
+      <p class="step-index">Claude 3.5 Sonnet</p>
+      <p data-i18n="ex.f5.claude">Las tres etiquetas separan contexto, orden y ejemplo.</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f5.claude.code">&lt;contexto&gt;
+Estamos migrando un monolito a microservicios.
+&lt;/contexto&gt;
+
+&lt;instrucciones&gt;
+Actúa como un arquitecto de software senior experto en AWS.
+Diseña la arquitectura de red.
+No uses bases de datos relacionales. Máximo 500 palabras.
+&lt;/instrucciones&gt;
+
+&lt;ejemplos&gt;
+Entrada: un servicio de pedidos acoplado a una sola base.
+Salida: tabla de límites de red, una fila por servicio.
+&lt;/ejemplos&gt;</code></pre>
+      </div>
+    </article>
+    <article class="card">
+      <p class="step-index">Gemini 1.5 Pro</p>
+      <p data-i18n="ex.f5.gem">Un ejemplo directo, una lista, y el manual entero cabe en el mismo prompt.</p>
+      <div class="code">
+        <pre><code data-i18n="ex.f5.gem.code">Lee el manual que va debajo de esta orden.
+Devuelve una lista:
+- límite
+- motivo
+
+Ejemplo:
+Entrada: un servicio acoplado a una sola base.
+Salida: una viñeta con el límite y el motivo.
+
+[el manual completo va aquí]</code></pre>
+      </div>
+    </article>
+  </div>
+
+  <h3 class="step-name sub" data-i18n="ex.m">Fase 06 · Método</h3>
+  <div class="cards">
+    <article class="card">
+      <p class="step-index" data-i18n="ex.m.pipe.label">Pipeline</p>
+      <p data-i18n="ex.m.pipe">Tres prompts. Ninguno hace el trabajo de los otros dos.</p>
+      <div class="code">
+        <pre><code data-i18n="ex.m.pipe.code">1. Clasifica
+Etiqueta cada módulo: pedido, pago o inventario.
+
+2. Extrae
+Saca pico, tamaño del equipo y bases citadas.
+No inventes cifras.
+
+3. Redacta
+Escribe solo la tabla de arquitectura de red.
+Máximo 500 palabras.</code></pre>
+      </div>
+    </article>
+    <article class="card">
+      <p class="step-index" data-i18n="ex.m.eval.label">Evaluación</p>
+      <p data-i18n="ex.m.eval">La versión 2 se mide contra la 1 en un set. «Me gusta más» no cuenta.</p>
+      <div class="code">
+        <pre><code data-i18n="ex.m.eval.code">Compara el prompt v2 con el v1 en estos 10 tickets.
+Cuenta cuántos respetan las 500 palabras
+y no inventan cifras.
+No digas cuál te gusta más.</code></pre>
+      </div>
+    </article>
+  </div>
+
+  <h3 class="step-name sub" data-i18n="ex.close">Los que cierran el roadmap</h3>
+  <p class="lede" data-i18n="ex.close.lede">El mismo encargo, dos veces. La versión efectiva usa las piezas de arriba en un solo prompt, y deja fuera el trabajo que va en el siguiente.</p>
+
+  <h3 class="step-name sub" data-i18n="ex.arch">Arquitectura, una sola tarea</h3>
+  <div class="pair">
+    <article class="card pair-bad">
+      <p class="pair-label" data-i18n="ex.bad">Prompt débil</p>
+      <div class="code">
+        <pre><code data-i18n="ex.arch.bad">Hazme la arquitectura de mi app, el código, los tests y el plan de marketing. Que quede bien.</code></pre>
+      </div>
+      <ul class="list">
+        <li data-i18n="ex.arch.bad1">Cinco tareas en una frase. No hay rol, contexto, límite ni formato.</li>
+        <li data-i18n="ex.arch.bad2">«Que quede bien» no es una métrica. El modelo inventa el resto.</li>
+      </ul>
+    </article>
+    <article class="card pair-good">
+      <p class="pair-label" data-i18n="ex.good">Versión efectiva</p>
+      <div class="code">
+        <pre><code data-i18n="ex.arch.good">Rol: Actúa como un arquitecto de software senior experto en AWS.
+
+### Contexto
+"""
+Estamos migrando un monolito de pedidos a microservicios.
+Pico: 2.000 req/s. Equipo de 6. Sin bases de datos relacionales.
+"""
+
+Tarea: Diseña solo la arquitectura de red.
+No escribas código, tests ni marketing: eso va en prompts aparte.
+
+Restricciones:
+- No uses bases de datos relacionales.
+- No inventes cifras que no estén en el contexto.
+- Máximo 500 palabras.
+
+Formato: una tabla Markdown (servicio, límite, motivo).
+
+Ejemplo:
+Entrada: un servicio de pedidos acoplado a una sola base.
+Salida: tabla de límites de red, una fila por servicio.
+
+Si falta un dato para decidir, hazme una sola pregunta y espera.
+Genera tres rutas, descarta la que no cierra y quédate con la más sólida.
+Responde solo con base en el texto provisto.
+Let's think step by step.</code></pre>
+      </div>
+    </article>
+  </div>
+
+  <h3 class="step-name sub" data-i18n="ex.code">Depuración, con estado del contexto</h3>
+  <div class="pair">
+    <article class="card pair-bad">
+      <p class="pair-label" data-i18n="ex.bad">Prompt débil</p>
+      <div class="code">
+        <pre><code data-i18n="ex.code.bad">Arregla este bug de React.</code></pre>
+      </div>
+      <ul class="list">
+        <li data-i18n="ex.code.bad1">No hay código, ni stack trace, ni comportamiento esperado.</li>
+        <li data-i18n="ex.code.bad2">Sin stack ni framework de tests, la corrección no se puede comprobar.</li>
+      </ul>
+    </article>
+    <article class="card pair-good">
+      <p class="pair-label" data-i18n="ex.good">Versión efectiva</p>
+      <div class="code">
+        <pre><code data-i18n="ex.code.good">Rol: revisor de TypeScript.
+Stack: React 18, TypeScript 5, Jest. Componente funcional, solo hooks.
+
+### Código
+"""
+function Total(&#123; items }) &#123;
+  return items.reduce((sum, item) =&gt; sum + item.price);
+}
+"""
+
+### Error exacto
+"""
+TypeError: Cannot read properties of undefined (reading 'reduce')
+"""
+
+Esperado: si items es undefined, devolver 0.
+Métrica: cubrir happy path y ese edge case en Jest.
+
+Analiza el stack trace paso a paso, identifica la línea,
+explica por qué falla y luego entrega el código corregido y los tests.
+Responde solo a partir del código y el error provistos.</code></pre>
+      </div>
+    </article>
+  </div>
+</section>

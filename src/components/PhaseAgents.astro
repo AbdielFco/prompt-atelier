@@ -1,0 +1,53 @@
+<section class="section" id="fase-5">
+          <p class="kicker" data-i18n="f5.kicker">Fase 05 · Agentes</p>
+          <h2 class="section-title" data-i18n="f5.title">El mismo prompt no cabe en todos los modelos</h2>
+          <p class="lede" data-i18n="f5.lede">Adapta las heurísticas al agente. El formato que el modelo leyó en su entrenamiento es el que conviene usar.</p>
+          <div class="cards">
+            <article class="card">
+              <p class="step-index">OpenAI</p>
+              <h3>GPT-4o</h3>
+              <ul class="list">
+                <li data-i18n="f5.gpt.1">Responde bien al contexto estructurado en Markdown.</li>
+                <li data-i18n="f5.gpt.2">Los roles muy definidos lo anclan.</li>
+                <li data-i18n="f5.gpt.3">Sigue instrucciones complejas en un solo bloque.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <p class="step-index">Anthropic</p>
+              <h3>Claude 3.5 Sonnet</h3>
+              <ul class="list">
+                <li data-i18n="f5.claude.1">Entrenado para leer XML: envuelve contexto, instrucciones y datos en etiquetas.</li>
+                <li data-i18n="f5.claude.2" data-i18n-mode="html">Usa <code>&lt;contexto&gt;</code>, <code>&lt;instrucciones&gt;</code> y <code>&lt;ejemplos&gt;</code>.</li>
+                <li data-i18n="f5.claude.3">Ventana de contexto grande. Mejor en código y documentos largos.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <p class="step-index">Google</p>
+              <h3>Gemini 1.5 Pro</h3>
+              <ul class="list">
+                <li data-i18n="f5.gem.1">Ventanas de contexto enormes y entrada multimodal (video e imagen).</li>
+                <li data-i18n="f5.gem.2">Útil para un repositorio entero o un manual masivo en un solo prompt.</li>
+                <li data-i18n="f5.gem.3">Responde bien a ejemplos directos y listas claras.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="frame frame-code">
+            <p class="code-label" data-i18n="f5.code.label">Sobre para Claude · las etiquetas de la fase</p>
+            <pre><code data-i18n="f5.code.body">&lt;contexto&gt;
+Estamos migrando un monolito a microservicios.
+&lt;/contexto&gt;
+
+&lt;instrucciones&gt;
+Actúa como un arquitecto de software senior experto en AWS.
+Diseña la arquitectura de red.
+No uses bases de datos relacionales. Máximo 500 palabras.
+Devuelve una tabla Markdown y el código en bloques comentados.
+&lt;/instrucciones&gt;
+
+&lt;ejemplos&gt;
+Entrada: un servicio de pedidos acoplado a una sola base.
+Salida: tabla de límites de red y un bloque comentado por servicio.
+&lt;/ejemplos&gt;</code></pre>
+          </div>
+        </section>

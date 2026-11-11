@@ -1,0 +1,49 @@
+<section class="section" id="fase-2">
+          <p class="kicker" data-i18n="f2.kicker">Fase 02 · Intermedio</p>
+          <h2 class="section-title" data-i18n="f2.title">Técnicas y estilos de prompting</h2>
+          <p class="lede" data-i18n="f2.lede">Metodologías comprobadas para guiar el razonamiento de los modelos de lenguaje grande.</p>
+
+          <div class="cards">
+            <article class="card">
+              <p class="step-index">01</p>
+              <h3 data-i18n="f2.shot.title">Zero-shot y few-shot</h3>
+              <ul class="list">
+                <li data-i18n="f2.shot.zero" data-i18n-mode="html"><strong>Zero-shot.</strong> Pedir una tarea sin ejemplos previos. Funciona para tareas comunes.</li>
+                <li data-i18n="f2.shot.few" data-i18n-mode="html"><strong>Few-shot.</strong> De 2 a 5 ejemplos de entrada y salida dentro del prompt. La forma más rápida de calibrar tono, formato y estilo sin describirlos en abstracto.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <p class="step-index">02</p>
+              <h3 data-i18n="f2.cot.title">Chain-of-Thought</h3>
+              <p data-i18n="f2.cot.body">Obliga al modelo a desglosar su lógica antes de la respuesta final. Reduce las alucinaciones en matemáticas y lógica.</p>
+              <ul class="list">
+                <li data-i18n="f2.cot.phrase">«Piensa paso a paso» o «Desglosa tu razonamiento antes de emitir el veredicto final».</li>
+                <li data-i18n="f2.cot.zero" data-i18n-mode="html"><strong>Zero-shot CoT.</strong> Añadir «Let's think step by step» al final del prompt.</li>
+              </ul>
+            </article>
+            <article class="card card-wide">
+              <p class="step-index">03</p>
+              <h3 data-i18n="f2.iter.title">Prompting iterativo y heurístico</h3>
+              <ul class="list">
+                <li data-i18n="f2.iter.heur" data-i18n-mode="html"><strong>Heurísticas.</strong> Las instrucciones críticas van al final: los LLM tienen sesgo de recencia. Separa contexto e instrucciones con delimitadores claros (<code>###</code>, <code>"""</code>, etiquetas).</li>
+                <li data-i18n="f2.iter.loop" data-i18n-mode="html"><strong>Iteración.</strong> Prompt, evaluar, refinar. Si la IA es verbosa, agrega un límite de longitud. Si inventa datos: «Responde solo basado en el texto provisto».</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="code">
+            <p class="code-label" data-i18n="f2.code.label">Delimitadores · contexto separado de la orden</p>
+            <pre><code data-i18n="f2.code.body">### Instrucciones
+Responde solo basado en el texto provisto. Máximo 120 palabras.
+
+"""
+[pega aquí el texto fuente]
+"""
+
+&lt;datos&gt;
+[tablas, logs o fragmentos que no deben mezclarse con la orden]
+&lt;/datos&gt;
+
+Let's think step by step.</code></pre>
+          </div>
+        </section>

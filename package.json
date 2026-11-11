@@ -1,0 +1,17 @@
+{
+  "name": "prompt-atelier",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.20.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.15.0"
+  },
+  "devDependencies": {
+    "vite": "^6.4.1"
+  }
+}
