@@ -1,3 +1,5 @@
+const BASE = import.meta.env.BASE_URL;
+
 export function initToc() {
   const scroller = document.querySelector("[data-scroller]");
   const toc = document.querySelector("[data-toc]");
@@ -116,7 +118,7 @@ export function initToc() {
       return;
     }
     event.preventDefault();
-    history.pushState(null, "", "/#" + id);
+    history.pushState(null, "", BASE + "#" + id);
     lockTo(id);
     scrollToSection(section);
   });
