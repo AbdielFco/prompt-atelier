@@ -13,12 +13,12 @@ Astro generates plain HTML, CSS, and JavaScript. There is no React or other UI f
 
 ```bash
 pnpm install     # installs dependencies and approves the build scripts
-pnpm dev         # dev server at http://localhost:4321/prompt-atelier/
+pnpm dev         # dev server at http://localhost:4321/
 pnpm build       # builds the static site into dist/
 pnpm preview     # serves dist/ to check the build
 ```
 
-Vite runs inside Astro. `astro.config.mjs` sets the port to 4321, the base path to `/prompt-atelier/`, and build sourcemaps. There is no separate Vite app.
+Vite runs inside Astro. `astro.config.mjs` sets the port to 4321 and enables build sourcemaps. There is no separate Vite app.
 
 ## Pages
 
@@ -30,9 +30,38 @@ Vite runs inside Astro. `astro.config.mjs` sets the port to 4321, the base path 
 
 The sidebar links to all three routes. On `/`, scrolling marks the section at the top.
 
-## Deployment
+## Deployment (Cloudflare Pages)
 
-`.github/workflows/deploy.yml` builds the site and publishes `dist/` to GitHub Pages on every push to `main`. Pages must be set to **Settings → Pages → Source: GitHub Actions** once. The site is served at `https://abdielfco.github.io/prompt-atelier/`.
+Este proyecto es un sitio estático de Astro y puede desplegarse en Cloudflare Pages.
+
+### Opción A: Desde el dashboard de Cloudflare (recomendado)
+
+1. Sube el repositorio a GitHub/GitLab (o usa *Direct Upload* si prefieres no conectar un repo).
+2. En Cloudflare, ve a **Workers & Pages → Create → Pages → Connect to Git** y selecciona el repositorio.
+3. Configura el build:
+   - **Framework preset:** `Astro`
+   - **Build command:** `pnpm build`
+   - **Build output directory:** `dist`
+   - **Root directory:** `prompt-atelier` (si el repositorio contiene esta carpeta como subdirectorio; si el repo raíz ya es este proyecto, déjalo vacío)
+4. Configura la versión de Node si es necesario (por ejemplo, variable de entorno `NODE_VERSION=22`).
+5. Haz clic en **Save and Deploy**. Cloudflare generará una URL `*.pages.dev`.
+
+### Opción B: Con Wrangler (CLI)
+
+1. Instala Wrangler y autentícate:
+   ```bash
+   pnpm add -D wrangler
+   pnpm exec wrangler login
+   ```
+2. Construye el proyecto:
+   ```bash
+   pnpm build
+   ```
+3. Despliega el contenido de `dist/`:
+   ```bash
+   pnpm exec wrangler pages deploy dist --project-name prompt-atelier
+   ```
+4. Para despliegues posteriores, repite `pnpm build` y el comando `wrangler pages deploy`.
 
 ## Structure
 
