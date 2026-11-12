@@ -285,7 +285,7 @@ const EN = {
   "sk.where.body": ".cursor/skills/revise-prompt/ in this repository. The rubric ships with the guide.",
   "sk.lang.title": "Language",
   "sk.lang.body": "The answer comes back in the language of the draft. The piece names stay the ones on this page.",
-  "footer.line": "A guide by <a href=\"https://github.com/AbdielFco\" rel=\"noreferrer\">AbdielFco</a>"
+  "footer.line": "A guide by <a href=\"https://github.com/AbdielFco\" rel=\"noreferrer\">AbdielFco</a> · <a href=\"https://github.com/AbdielFco/prompt-atelier\" rel=\"noreferrer\">Repository</a>"
 };
 
 let spanish = {};
